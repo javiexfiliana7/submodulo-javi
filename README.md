@@ -4,5 +4,4 @@
 
 **Breve Descripción/Introducción:**
 
-Este módulo abarcará el desarrollo de las bases de datos que se usarán. Al tratarse de una aplicación de gestión de elementos, necesitaremos base de datos para la gestión de esos de esos elementos( identificación del elemento, tipo de elemento …), para los usuarios( identificación de los usuarios …), etc.
-
+Este módulo se centrará en los servicios que el servidor de nuestro sistema web va a ofrecer. Conectaremos la aplicación con la base de datos, se procesarán todo lo relacionado con usuarios, anuncios, ventas, etc.. Y despliegue y configuración de la palicación. Usaremos Flask.
