@@ -123,9 +123,9 @@ script:
 
 Una vez creado estos dos archivos, con el Makefile y test.py también( de los apartados anteriores), realizamos los siguientes pasos:
 
-- Registrarnos en la página de travis e indicar el repositorio que queremos que compruebe.
-- En nuestro repositorio de github, en el apartado **Setting/Webhooks&services** tenemos que activar el apartado de **Travis**.
+- Registrarme en la página de travis e indicar el repositorio que queremos que compruebe.
+- En nuestro repositorio de github, en el apartado **Setting/Webhooks&services** tenemos que activar el apartado de **Travis** y  pulsar **Test Service** para que inicie el test.
 
 Saldrá algo así:
 
-![travis](http://i63.tinypic.com/2pza06q.png)
+![travis]()
