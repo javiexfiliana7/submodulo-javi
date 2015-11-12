@@ -105,7 +105,7 @@ La funcionalidad inicial básica que presenta esta pequeña aplicación se piens
 Para la integración contínua hemos elegido [travis](https://travis-ci.org/) ya que es fácil de usar y entender.
 
 En este apartado he creado un fichero llamado [setup.py](setup.py) y un fichero **.travis.ym**(el cual está en el directorio raíz).
-Fichero [.travis.yml](/aplicacion/.travis.yml):
+Fichero [.travis.yml](/.travis.yml):
 
 ~~~
 language: python
