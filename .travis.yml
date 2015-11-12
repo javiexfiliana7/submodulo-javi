@@ -4,7 +4,7 @@ python:
 # command to install dependencies
 install:
  - python setup.py install
- - pip install -r aplicacion/requirements.txt
+ - pip install -r requirements.txt
 # command to run tests
 script:
  - cd pollaplication
