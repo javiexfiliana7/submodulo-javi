@@ -1,11 +1,11 @@
 language: python
 python:
- - "3.4.3"
+ - "2.7"
 # command to install dependencies
 install:
- - python pollaplication/setup.py install
- - pip install -r pollaplication/requirements.txt
+ - python aplicacion/setup.py install
+ - pip install -r aplicacion/requirements.txt
 # command to run tests
 script:
- - cd pollaplication
+ - cd aplicacion/pollaplication
  - python manage.py test
