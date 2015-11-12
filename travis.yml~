@@ -3,9 +3,9 @@ python:
  - "2.7"
 # command to install dependencies
 install:
- - python setup.py install
+ - python aplicacion/setup.py install
  - pip install -r aplicacion/requirements.txt
 # command to run tests
 script:
- - cd pollaplication
+ - cd aplicacion/pollaplication
  - python manage.py test
