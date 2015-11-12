@@ -9,6 +9,6 @@ setup(name='aplicacion',
 	author='Javier Ruiz César',
 	author_email='javiexfiliana@gmail.com',
 	license='GNU GPL',
-	packages=['aplicacion'],
+	packages=['.'],
 	install_requires=['django','wheel'],
 	zip_safe=False)
