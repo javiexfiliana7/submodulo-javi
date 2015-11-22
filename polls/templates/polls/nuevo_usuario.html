@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %} 
+	<h1> Registra nuevo usuario </h1>
+{% endblock %}
+{% block content %}
+	<form id='formulario' method='post' action='' onsubmit="return marcado();">{% csrf_token %}
+	   <table>{{ formulario }}</table>
+	   <input type="checkbox" name="termin" id="termin" /> Acepto licencia
+	   <p><input type="submit" value='Registrar'/></p>
+	</form>
+{% endblock %}
