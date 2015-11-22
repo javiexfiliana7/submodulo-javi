@@ -241,7 +241,7 @@ Se añade el proceso de integración continua con snap-ci, para ello:
 
 - Compruebamos que el repositorio esta conectado con **Github** y que tenemos el despliegue automático ( consultar pestaña Deploy ).
 
-![github](http://i68.tinypic.com/2r553dk.png)
+![github]()
 
 - Ahora, cada vez que realicemos un push a nuestro reopsitorio, se realizará un testeo previo a su posterior despliegue.
 
