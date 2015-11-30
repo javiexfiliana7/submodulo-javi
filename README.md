@@ -253,6 +253,6 @@ Se añade el proceso de integración continua con snap-ci, para ello:
 
 Con este último paso en snap-ci, hemos realizado la integración continua de la aplicación, cada vez que hagamos un push se pasarán los test y se desplegará la aplicación.
 
--  Nota: **AVANCES**: la utilización de JSON con sus tests. Puede verse en el archivo **views.py**, su llamada en los **tests.py** y el archivo **serializers.py**.
+- Nota: **AVANCES**: se pueden ver en el [avances.md](avances.md).
 
 
