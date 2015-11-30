@@ -233,8 +233,6 @@ application = Cling(get_wsgi_application())
 
 Aplicación [desplegada](https://secure-escarpment-5944.herokuapp.com/).
 
-Hemos añadido un archivo **.sh** para realizar el despligue de la aplicacion, puede verse [aquí](despliegue.sh). Para realizarlo nos hemos servido del siguiente [enlace](https://github.com/iblancasa/BackendSI2-IV/wiki/DespliegueHeroku), el cual nos conducía a otros enlaces de heroku, los cuales hemos usado para contrastar ideas.
-
 Se añade el proceso de integración continua con snap-ci, para ello:
 
 - Nos registramos en  [https://snap-ci.com](https://snap-ci.com) y conectamos a nuestro repo.
