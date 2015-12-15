@@ -129,7 +129,7 @@ La base de datos que usaremos en Heroku es **PostgreSQL**. Para ello:
 - También tenemos *dj_database_url*, necesario para PostgreSQL.
 - Editamos el archivo *setting.py* y añadimos lo siguiente( sacado del siguiente [enlace](http://stackoverflow.com/questions/26080303/improperlyconfigured-settings-databases-is-improperly-configured-please-supply):
 
-![setting](http://i68.tinypic.com/30thuvp.png)
+![setting](http://i68.tinypic.com/30thuvp.jpg)
 
 - En **wsgi.py** tendremos lo siguiente:
 ![wsgi](http://i67.tinypic.com/30nav6f.png)

@@ -129,7 +129,7 @@ La base de datos que usaremos en Heroku es **PostgreSQL**. Para ello:
 - También tenemos *dj_database_url*, necesario para PostgreSQL.
 - Editamos el archivo *setting.py* y añadimos lo siguiente( sacado del siguiente [enlace](http://stackoverflow.com/questions/26080303/improperlyconfigured-settings-databases-is-improperly-configured-please-supply):
 
-![setting](http://i68.tinypic.com/30thuvp.png)
+![setting](http://i68.tinypic.com/30thuvp.jpg)
 
 - En **wsgi.py** tendremos lo siguiente:
 ![wsgi](http://i67.tinypic.com/30nav6f.png)
@@ -156,6 +156,7 @@ git push heroku master
 Aplicación [desplegada](https://serene-dawn-1237.herokuapp.com/).
 
 Añadimos el proceso de integración continua con snap-ci, para ello vamos a seguir los siguientes pasos:
+
 [![Build Status](https://snap-ci.com/javiexfiliana7/submodulo-javi/branch/master/build_image)](https://snap-ci.com/javiexfiliana7/submodulo-javi/branch/master)
 
 - Nos registramos en  [https://snap-ci.com](https://snap-ci.com) y conectamos a nuestro repositorio.
