@@ -27,10 +27,10 @@ RUN sudo easy_install Pillow
 
 #Instalar la app
 RUN ls
-RUN cd submodulo-javiexfiliana/ && ls -l
-RUN cd submodulo-javiexfiliana/ && cat requirements.txt
-RUN cd submodulo-javiexfiliana/ && sudo pip install -r requirements.txt
+RUN cd submodulo-javi/ && ls -l
+RUN cd submodulo-javi/ && cat requirements.txt
+RUN cd submodulo-javi/ && sudo pip install -r requirements.txt
 
 
 #Migraciones
-RUN cd submodulo-javiexfiliana/ && python manage.py syncdb --noinput
+RUN cd submodulo-javi/ && python manage.py syncdb --noinput

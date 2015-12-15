@@ -60,7 +60,7 @@ Nos permiten comprobar la funcionalidad de los proyectos conforme los vamos desa
 Los test están guardados en el archivo  **tests.py** , para ejecutarlos deberemos poner **python manage.py test**.
 
 
-Mi archivo tests.py está [aquí](pollaplication/polls/tests.py). Ejemplo de ejecución:
+Mi archivo tests.py está [aquí](/tests.py). Ejemplo de ejecución:
 
 ![visualizacion](http://i67.tinypic.com/2q1ie6s.png)
 
@@ -68,7 +68,7 @@ La funcionalidad inicial básica que presenta esta pequeña aplicación se piens
 
 ###Integración continua
 
-Para la integración contínua hemos elegido [travis](https://travis-ci.org/) ya que es fácil de usar y entender.
+Para la integración contínua he elegido [travis](https://travis-ci.org/).
 
 En este apartado he creado un fichero llamado [setup.py](setup.py) y un fichero **.travis.ym**(el cual está en el directorio raíz).
 Fichero [.travis.yml](/.travis.yml):
@@ -83,14 +83,10 @@ install:
  - pip install -r requirements.txt
 # command to run tests
 script:
- - cd pollaplication
  - python manage.py test
 ~~~
 
-
-Una vez creado estos dos archivos, con el Makefile y test.py también( de los apartados anteriores), realizamos los siguientes pasos:
-
-- Registrarnos en la página de travis e indicar el repositorio que queremos que compruebe.
+- Nos registramos en la página de travis e indicamos el repositorio que queremos que compruebe.
 - En nuestro repositorio de github, en el apartado **Setting/Webhooks&services** tenemos que activar el apartado de **Travis**.
 
 Saldrá algo así:
@@ -153,7 +149,7 @@ git push heroku master
  **heroku run python manage.py migrate**
  **heroku run python manage.py createsuperuser**
 
-Aplicación [desplegada](https://serene-dawn-1237.herokuapp.com/).
+Aplicación [desplegada](https://appsubmodulojavi.herokuapp.com/).
 
 Añadimos el proceso de integración continua con snap-ci, para ello vamos a seguir los siguientes pasos:
 
