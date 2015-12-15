@@ -21,36 +21,6 @@ Este módulo se centrará en los servicios que el servidor de nuestro sistema we
 ##Segundo hito
 [![Build Status](https://travis-ci.org/javiexfiliana7/submodulo-javi.svg?branch=master)](https://travis-ci.org/javiexfiliana7/submodulo-javi)
 
-# Encuestas sitio web:
-
-Aplicación que nos permite crear y votar encuestas. Para realizarla hemos seguido el tutorial de [Django](https://docs.djangoproject.com/en/1.8/intro/tutorial01/) , y la hemos usado para avanzar en la asignatura de Infraestructura Virtual y Desarrollo de Aplicaciónes de Internet.
-
-##Uso
-
-Una vez descargada la aplicación, nos vamos a **submodulo-javi-master/pollaplication/** y lo ejecutamos en la terminal con **python manage.py runserver**:
-
-![ejecucion](http://i68.tinypic.com/nvod8i.png)
-
-Para votar encuestas ponemos en nuestro navegador **http://127.0.0.1:8000** donde nos aparecerán todas las preguntas que hayamos creado:
-
-![cuestiones](http://i67.tinypic.com/2uesos4.png)
-
-Seleccionamos una de las preguntas que aparecen:
-
-![opciones](http://i63.tinypic.com/dbmm2w.png)
-
-Tras esto, se almacenará nuestro voto:
-
-![resultados](http://i65.tinypic.com/s24arm.png)
-
-
-Para la creación de preguntas ejecutamos **python manage.py shell**, tal y como se explica en el [tutorial](https://docs.djangoproject.com/en/1.8/intro/tutorial01/) ( en el apartado **Playing with the API**):
-
-![crear_pregunta](http://i66.tinypic.com/dzjk8z.png)
-
-Y podemos ver la pregunta:
-
-![visualizacion_de_la_pregunta](http://i67.tinypic.com/6xqec0.jpg)
 
 ##Herramienta de construcción:
 Para este segundo apartado del hito vamos a crear un Makefile, con las siguientes opciones:
@@ -63,9 +33,7 @@ Para este segundo apartado del hito vamos a crear un Makefile, con las siguiente
 
 - run: nos ejecutará la aplicación. **make run**
 
-- doc: nos generará la documentación. **make doc**
-
-Mi makefile es [este](/pollaplication/Makefile):
+Mi makefile es [este](/Makefile):
 
 ~~~
 #Makefile segundo hito 
@@ -83,8 +51,6 @@ test:
 	
 run:
 	python manage.py runserver
-doc:
-	epydoc --html polls/*.py 
 ~~~
 
 ###Tests
@@ -133,34 +99,44 @@ Saldrá algo así:
 
 
 ## Despliegue en un Paas
-Esta práctica consiste en desplegar nuestra aplicación en un PaaS. Usaremos Heroku, debido a que es fácil, gratuito y permite usar python y el Framework Django. Para su despliegue modificaremos y crearemos los siguientes ficheros:
+Vamos a desplegar nuestra aplicación en un PaaS. Nos registramos en Heroku que es el que se va a usar. Añadimos lo siguiente:
+
+- requirements.txt: especifica todo lo necesario para que nuestra aplicación funcione:
+```
+Django==1.8.6
+django-toolbelt==0.0.1
+djangorestframework==3.3.1
+dj-database-url==0.3.0
+dj-static==0.0.6
+gunicorn==19.3.0
+static3==0.6.1
+wheel==0.24.0
+whitenoise==2.0.4
+psycopg2==2.6.1
+Pygments==2.0.2
+
+```
 
 - Procfile, el cual indica a heroku que tiene que lanzar:
 ```
 web: gunicorn pollaplication.wsgi --log-file -
 
 ```
-- requirements.txt: especifica todo lo necesario para que nuestra aplicación funcione:
-```
-Django==1.8.6
-argparse==1.2.1
-dj-database-url==0.3.0
-dj-static==0.0.6
-django-toolbelt==0.0.1
-djangorestframework==3.3.1
-foreman==0.9.7
-futures==3.0.3
-gunicorn==19.3.0
-psycopg2==2.6.1
-requests==2.8.1
-requests-futures==0.9.5
-static3==0.6.1
-wheel==0.26.0
-whitenoise==2.0.4
-wsgiref==0.1.2
 
-```
-Despues de esto nos registramos en Heroku. Una vez registrados ejecutaremos una serie de comandos que ahora se especifican, para lanzar nuestra aplicación en heroku:
+La base de datos que usaremos en Heroku es **PostgreSQL**. Para ello:
+
+- Tenemos *psycopg2* para poder usarla.
+- También tenemos *dj_database_url*, necesario para PostgreSQL.
+- Editamos el archivo *setting.py* y añadimos lo siguiente( sacado del siguiente [enlace](http://stackoverflow.com/questions/26080303/improperlyconfigured-settings-databases-is-improperly-configured-please-supply):
+
+![setting](http://i68.tinypic.com/30thuvp.png)
+
+- En **wsgi.py** tendremos lo siguiente:
+![wsgi](http://i67.tinypic.com/30nav6f.png)
+
+
+Lanzamos la aplicación en heroku:
+
 ```
 wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 heroku login
@@ -170,91 +146,28 @@ git commit -m "upload v2
 git push heroku master
 
 ```
-La base de datos que usaremos en Heroku es **PostgreSQL**. Para ello:
 
-- Tenemos *psycopg2* para poder usarla.
-- También tenemos *dj_database_url*, necesario para PostgreSQL.
-- Editamos el archivo *setting.py* del proyecto y añadimos lo siguiente( sacado del siguiente [enlace](http://stackoverflow.com/questions/26080303/improperlyconfigured-settings-databases-is-improperly-configured-please-supply):
-```
-
-import dj_database_url
-
-...
-
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-ALLOWED_HOSTS = ['*']
-ON_HEROKU = os.environ.get('PORT')
-if ON_HEROKU:
-    DATABASE_URL='postgres://uhaxlowwnbgqrv:3decYI2il-srwwKVSDV6a4G-xQ@ec2-54-83-36-203.compute-1.amazonaws.com:5432/da2k9559f8odld'
-    DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
-
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-.....
-
-STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
-
-```
-
-- En **wsgi.py** tendremos lo siguiente:
-```
-import os
-
-from django.core.wsgi import get_wsgi_application
-from dj_static import Cling
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "apuestas.settings")
-
-#from whitenoise.django import DjangoWhiteNoise
-application = get_wsgi_application()
-
-
-application = Cling(get_wsgi_application())
-#application = DjangoWhiteNoise(application)
-```
-- Destacar que en DATABASE_URL se indica la url que sale para la base de datos postgreSQL que Heroku nos ofrece, hay que darle a show para verlo.
 - Guardamos cambios en github y hacemos **git push heroku master**.
-- Ejecutamos los comando:
+- Para sincronizar la base de datos PostgreSQL ejecutamos los comando:
  **heroku run python manage.py makemigrations**
  **heroku run python manage.py migrate**
  **heroku run python manage.py createsuperuser**
- para sincronizar la base de datos PostgreSQL.
 
-Aplicación [desplegada](https://secure-escarpment-5944.herokuapp.com/).
+Aplicación [desplegada](https://serene-dawn-1237.herokuapp.com/).
 
-Hemos añadido un archivo **.sh** para realizar el despligue de la aplicacion, puede verse [aquí](despliegue.sh). Para realizarlo nos hemos servido del siguiente [enlace](https://github.com/iblancasa/BackendSI2-IV/wiki/DespliegueHeroku), el cual nos conducía a otros enlaces de heroku, los cuales hemos usado para contrastar ideas.
+Añadimos el proceso de integración continua con snap-ci, para ello vamos a seguir los siguientes pasos:
+[![Build Status](https://snap-ci.com/javiexfiliana7/submodulo-javi/branch/master/build_image)](https://snap-ci.com/javiexfiliana7/submodulo-javi/branch/master)
 
-Se añade el proceso de integración continua con snap-ci, para ello:
-
-- Nos registramos en  [https://snap-ci.com](https://snap-ci.com) y conectamos a nuestro repo.
+- Nos registramos en  [https://snap-ci.com](https://snap-ci.com) y conectamos a nuestro repositorio.
 
 ![snap_pipeline](http://i64.tinypic.com/34y1cg4.png)
 
-- Compruebamos que el repositorio esta conectado con **Github** y que tenemos el despliegue automático ( consultar pestaña Deploy ).
+- Comprobamos que el repositorio esta conectado con **Github** y que tenemos el despliegue automático ( consultar pestaña Deploy ).
 
 ![github](http://i68.tinypic.com/2r553dk.png)
 
 - Ahora, cada vez que realicemos un push a nuestro reopsitorio, se realizará un testeo previo a su posterior despliegue.
 
 
-- Aquí tenemos la etiqueta de Snap-ci, de que todo ha ido correctamente.
-
-[![Build Status](https://snap-ci.com/javiexfiliana7/submodulo-javi/branch/master/build_image)](https://snap-ci.com/javiexfiliana7/submodulo-javi/branch/master)
-
-
-Con este último paso en snap-ci, hemos realizado la integración continua de la aplicación, cada vez que hagamos un push se pasarán los test y se desplegará la aplicación.
-
-- Nota: **AVANCES**: se pueden ver en el [avances.md](avances.md).
-
+Hemos añadido un archivo **.sh** para realizar el despligue de la aplicacion, puede verse [aquí](despliegue.sh). Para realizarlo nos hemos servido del siguiente [enlace](https://github.com/iblancasa/BackendSI2-IV/wiki/DespliegueHeroku), el cual nos conducía a otros enlaces de heroku, los cuales hemos usado para contrastar ideas.
 
