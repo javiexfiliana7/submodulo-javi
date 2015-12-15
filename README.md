@@ -170,3 +170,32 @@ Añadimos el proceso de integración continua con snap-ci, para ello vamos a seg
 
 Hemos añadido un archivo **.sh** para realizar el despligue de la aplicacion, puede verse [aquí](despliegue.sh). Para realizarlo nos hemos servido del siguiente [enlace](https://github.com/iblancasa/BackendSI2-IV/wiki/DespliegueHeroku), el cual nos conducía a otros enlaces de heroku, los cuales hemos usado para contrastar ideas.
 
+###Entorno de pruebas
+
+Como entorno de pruebas elegimos docker ya que facilita el despliegue de aplicaciones en contenedores aislados de la máquina anfitriona.
+
+El enlace a mi imagen es este: [Imagen](https://hub.docker.com/r/javiexfiliana/submodulo-javi/)
+
+###Creación de imagen
+
+- Creamos un fichero Dockerfile, este fichero estará en la raíz de la aplicación. 
+
+- Nos registramos en [docker hub](https://hub.docker.com/)
+- Pinchamos en `Create > Create automatic build` y seleccionamos el repositorio de nuestra aplicacion. Así cada vez que realicemos un cambio en el repositorio se crea una nueva imagen con dichos cambios.
+
+![i4-1](http://i67.tinypic.com/2wghbhk.png)
+
+Para descargar la imagen y arrancarla ejecutamos:
+
+`sudo docker pull javiexfiliana/submodulo-javi`
+
+
+`sudo docker run -i -t javiexfiliana/submodulo-javi /bin/bash`
+
+Entramos en el directorio, obtenemos su dirección ip con **ifconfig** y la lanzamos como vemos en la imagen de abajo:
+
+![i4-2](http://i65.tinypic.com/24l2aeo.png)
+
+También se ha creado un [script](scripts/docker.sh) que descarga la imagen de la aplicación y la lanza, no olvidar hacer `cd IV && make run` para lanzar la aplicación
+
+
