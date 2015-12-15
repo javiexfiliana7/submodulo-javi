@@ -97,8 +97,6 @@ Saldrá algo así:
 ## Despliegue en un Paas
 Vamos a desplegar nuestra aplicación en un PaaS. Nos registramos en Heroku que es el que se va a usar. Añadimos lo siguiente:
 
-[![Heroku](https://www.herokucdn.com/deploy/button.png)](https://appsubmodulojavi.herokuapp.com/)
-
 - requirements.txt: especifica todo lo necesario para que nuestra aplicación funcione:
 ```
 Django==1.8.6
