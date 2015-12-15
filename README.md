@@ -196,6 +196,6 @@ Entramos en el directorio, obtenemos su dirección ip con **ifconfig** y la lanz
 
 ![i4-2](http://i65.tinypic.com/24l2aeo.png)
 
-También se ha creado un [script](scripts/docker_install_and_run.sh) que descarga la imagen de la aplicación y la lanza, no olvidar entrar en el directorio y lanzar la aplicación.
+También se ha creado un [script](/docker_install_and_run.sh) que descarga la imagen de la aplicación y la lanza, no olvidar entrar en el directorio, hacer `make run` para lanzar la aplicación y ejecutar en el navegador la dirección correcta.
 
 
