@@ -198,6 +198,4 @@ Entramos en el directorio, obtenemos su dirección ip con **ifconfig** y la lanz
 
 También se ha creado un [script](/docker_install_and_run.sh) que descarga la imagen de la aplicación y la lanza, no olvidar entrar en el directorio, hacer `make run` para lanzar la aplicación y ejecutar en el navegador la dirección correcta.
 
-Los cambios del hito 4 con respecto al 3 los podemos ver en [actualizaciones](/actualizaciones.md)
-
 
