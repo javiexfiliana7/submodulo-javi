@@ -4,5 +4,4 @@
 * Reorganización de README para que no sea tan extenso
 * Utilización de [postgres](despliegue-heroku.md#configuración-postgresql) en heroku
 * Mejorado el uso de Makefile con respecto al anterior
-* Añadimos archivo de despliegue con Fabric
 
