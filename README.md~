@@ -223,7 +223,7 @@ git clone https://github.com/javiexfiliana7/submodulo-javi.git
 
 - Una vez clonado nos situamos en el directorio donde tenemos los archivos **Vagrantfile** e **iv.yml**, necesarios para el despliegue.
 
-- Lanzamos **create_and_run.sh**, que desplegará la aplicación con los archivos anteriores. [create_and_run.sh](/VagrantIV/create_and_run.sh)
+- Lanzamos **create_and_run.sh**, que desplegará la aplicación con los archivos anteriores. [create_and_run.sh]()
 
 
 Hemos creado un archivo de despliegue para estos pasos: [despliegue_ec2](/deploy_EC2.sh).

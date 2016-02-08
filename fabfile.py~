@@ -7,8 +7,8 @@ from fabric.contrib import django
 def getDocker():
 	run('sudo apt-get update')
 	run('sudo apt-get install -y docker.io')
-	run('sudo docker pull javiexfiliana7/proyectoDAI-IV.git')
+	run('sudo docker pull javiexfiliana/submodulo-javi.git')
 
 #Ejecucion de docker
 def runDocker():
-	run('sudo docker run -p 80:80 -i -t javiexfiliana/proyectoDAI-IV')
+	run('sudo docker run -p 80:80 -i -t javiexfiliana/submodulo-javi')
