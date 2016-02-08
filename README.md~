@@ -228,5 +228,5 @@ git clone https://github.com/javiexfiliana7/submodulo-javi.git
 
 Hemos creado un archivo de despliegue para estos pasos: [despliegue_ec2](/deploy_EC2.sh).
 
-En este [archivo](/ec2_vagrant.md) podemos ver más información sobre la creación de los archivos Vagrantfile y Ansible.
+En este [archivo](https://github.com/javiexfiliana7/submodulo-javi/ec2_vagrant.md) podemos ver más información sobre la creación de los archivos Vagrantfile y Ansible.
 
