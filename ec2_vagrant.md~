@@ -158,6 +158,6 @@ ENV['n']
 
 ```
 
-- Tras esperar un buen rato podemos ver como la aplicación está desplegada y funciona correctamente:
+- Podemos ver como la aplicación está desplegada y funciona correctamente:
 
-![desplegada](http://i63.tinypic.com/32zjak0.png)
+![desplegada]()
