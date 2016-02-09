@@ -15,9 +15,7 @@
   - name: Ins Pyp
     apt: pkg=python-pip state=present
   - name: Instalar python-dev
-    apt: pkg=python-dev state=present
-  - name: Instalar libpq-dev
-    apt: pkg=libpq-dev state=present
+    command: sudo apt-get install -y libpq-dev python-psycopg2
   - name: Obtener aplicacion de git
     git: repo=https://github.com/javiexfiliana7/submodulo-javi.git  dest=submodulo-javi clone=yes force=yes
   - name: Permisos de ejecucion
