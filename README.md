@@ -203,14 +203,15 @@ También se ha creado un [script](/docker_install_and_run.sh) que descarga la im
 Para solucionar este problema elegimos Fabric que es una biblioteca de Python para automatizar tareas mediante SSH. Para ello he creado un archivo [fabfile](https://github.com/javiexfiliana7/submodulo-javi/blob/master/fabfile.py) que descargará el docker y lo ejecutará.
 La información de este proceso se puede ver en el siguiente [archivo](/ec2.md). La aplicación se ha desplegado sobre una instancia ec2 que es un servicio web de Amazón dinámico, para más información podemos ver el siguiente [enlace](https://aws.amazon.com/es/ec2/). 
 
-Mi aplicación desplegada en ec2 es la [siguiente](http://ec2-52-36-99-108.us-west-2.compute.amazonaws.com/)
+Mi aplicación desplegada en ec2 es la [siguiente](http://ec2-52-36-99-108.us-west-2.compute.amazonaws.com)
 
 
 Los cambios del hito 4 con respecto al 3 los podemos ver en [actualizaciones](/actualizaciones.md)
 
 
 ### Despliegue de IAAS:EC2
-[![EC2](http://i63.tinypic.com/e0ef7.jpg)](http://ec2-52-36-99-108.us-west-2.compute.amazonaws.com/)
+
+[![EC2](http://i63.tinypic.com/e0ef7.jpg)](http://ec2-52-36-99-108.us-west-2.compute.amazonaws.com)
 
 
 Vamos a usar **EC2** como **IAAS**. En el despliegue usaremos **Vagrant** y **Ansible**. 
